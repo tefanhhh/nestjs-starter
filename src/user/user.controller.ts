@@ -19,8 +19,15 @@ import { IPaginationMeta, Pagination } from 'nestjs-typeorm-paginate';
 import { User } from './entities/user.entity';
 import { PaginationMeta } from 'src/models/pagination-meta.model';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { ApiBearerAuth, ApiBody, ApiParam, ApiQuery } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiParam,
+  ApiQuery,
+  ApiTags,
+} from '@nestjs/swagger';
 
+@ApiTags('users')
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
 @Controller('users')
