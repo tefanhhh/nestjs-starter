@@ -10,10 +10,11 @@ import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './local-auth.guard';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { jwtDecode } from 'jwt-decode';
-import { ApiBearerAuth, ApiBody } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiBody, ApiTags } from '@nestjs/swagger';
 import { LoginCredential } from './constants';
 import { UserService } from 'src/user/user.service';
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(
