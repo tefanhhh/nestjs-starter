@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/entities/user.entity';
 import { UtilsController } from './utils/utils.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { UtilsController } from './utils/utils.controller';
       verboseRetryLog: true,
       // dropSchema: true,
     }),
+    AuthModule,
     UserModule,
   ],
   controllers: [UtilsController],
